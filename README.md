@@ -97,14 +97,14 @@ Dans le fichier [script.js](/src/js/script.js), compléter le code suivant :
 
 ```js
 // On cible les éléments à modifier
-const toggle = _____________________;
-const nav = ______________________;
+const toggle = document.querySelector(".menu-btn");
+const nav = document.querySelector("nav.menu");
 
 // Ajoute un écouteur d'événements à l'élément 'toggle' qui écoute les événements 'click'.
-toggle.____________("______", () => {
-  // Mise à jour des attributs ARIA pour accessibilité
-  nav__________________;
-  toggle__________________;
+toggle.addEventListener("click", () => {
+    // Mise à jour des attributs ARIA pour accessibilité (on inverse les valeurs)
+    nav.setAttribute("aria-hidden", "false");
+    toggle.setAttribute("aria-expanded", "true");
 });
 ```
 

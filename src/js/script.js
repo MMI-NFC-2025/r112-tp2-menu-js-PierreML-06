@@ -4,7 +4,7 @@ const nav = document.querySelector("nav.menu");
 
 // Ajoute un écouteur d'événements à l'élément 'toggle' qui écoute les événements 'click'.
 toggle.addEventListener("click", () => {
-    // Mise à jour des attributs ARIA pour accessibilité (on inverse les valeurs)
-    nav.setAttribute("aria-hidden", "false");
-    toggle.setAttribute("aria-expanded", "true");
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    nav.setAttribute("aria-hidden", String(isOpen));
+    toggle.setAttribute("aria-expanded", String(!isOpen));
 });
